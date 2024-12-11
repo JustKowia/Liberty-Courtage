@@ -1,4 +1,10 @@
 /* Base styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     font-family: 'DM Sans', sans-serif;
@@ -10,7 +16,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    overflow: scroll ;
+    
 }
 
 /* Navigation Styles */
@@ -47,7 +53,9 @@ body {
 .navigation-select button {
     padding: 12px 20px;
     border-radius: 50px;
-    background: #F0657C;
+    background: #214E49;
+    color: white;
+    
 }
 
 /* Header Styles */
@@ -55,8 +63,8 @@ body {
     height: 100%;
     display: flex;
     flex-direction: row;
-    position: relative;
-    background-color: #1A4540;
+    
+   
     overflow: hidden;
 }
 
@@ -72,7 +80,7 @@ body {
 .header-left h2,
 .header-left h1,
 .header-left h3 {
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 0 0 10px 55px;
 }
 
@@ -81,7 +89,7 @@ body {
 }
 
 .header-left h1 span{
-    color: #F0657C;
+    color: #4BCFB9;
 }
 
 .header-left h2 {
@@ -108,14 +116,15 @@ body {
 }
 
 .button-header-1 {
-    background: #F0657C;
+    background: #1A4540;
     border: 1px solid #486284;
+    color: white;
 }
 
 .button-header-2 {
     background-color: transparent;
-    border: 1px solid #F0657C;
-    color: #F0657C;
+    border: 1px solid #2ECFB4;
+    color: #000000;
 }
 
 /* .header-right positioning */
@@ -128,11 +137,12 @@ body {
 .header-right img {
    
     position: absolute;  
-    top: 0;          
-    width: 100%;         
+    top: 0;   
+    left: 5em;       
+    width: 90%;         
     height: 100%;
     object-fit: cover;  
-    z-index: -1;         
+    z-index: 1O0;         
 }      
 
 
@@ -266,13 +276,13 @@ input {
 
 #monthly-payment h3 {
     text-align: center;
-    color: #F0657C;
+    color: #1EE4C3;
 }
 
 #monthly-payment p {
     font-size: 16px;
     font-weight: bold;
-    color: #F0657C;
+    color: #1EE4C3;
     text-align: center;
 }
 
@@ -285,7 +295,7 @@ input {
 }
 
 #monthly-payment p {
-    color: #F0657C;
+    color: #1EE4C3;
 text-align: center;
 font-family: "DM Sans";
 font-size: 54px;
@@ -297,7 +307,7 @@ margin: 0 0 16px;
 
 
 #monthly-payment p:first-child {
-    color: #F0657C;
+    color: #1EE4C3;
     text-align: center;
     font-family: "DM Sans";
     font-size: 32px;
@@ -406,7 +416,7 @@ margin: 0 0 16px;
 }
 
 .list-item h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: #1A1A1A;
     margin: 0;
@@ -415,7 +425,7 @@ margin: 0 0 16px;
 .toggle-button {
     width: 30px;
     height: 30px;
-    background-color: #F0657C;
+    background-color: #14B89C;
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
@@ -467,7 +477,7 @@ margin: 0 0 16px;
 
 
 .list-item.expanded h2 {
-    color: #F0657C; 
+    color: #14B89C; 
 }
 
 
@@ -504,25 +514,152 @@ margin: 0 0 16px;
 .date {
     font-size: 14px;
     color: white;
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  
+    padding: 140px 0; /* Augmente l'espace en haut et en bas */
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 140px 0; /* Augmente l'espace en haut et en bas */
+}
+
+/* Testimonial Section Background */
+.scrolling-background {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it derrière le contenu */
+}
+
+/* Container for each scrolling text */
+.scrolling-text-container {
+    position: absolute;
+    width: 200%; /* Double la largeur pour inclure les copies */
+    height: 100%;
+    display: flex; /* Aligne les textes horizontalement */
+    align-items: center; /* Centre le texte verticalement */
+    overflow: hidden; /* Masque les textes en dehors */
+}
+
+/* Top text */
+.scrolling-text-container:nth-child(1) {
+    top: 20%; /* Position à 20% de la hauteur */
+    transform: rotate(-15deg);
+}
+
+/* Bottom text */
+.scrolling-text-container:nth-child(2) {
+    bottom: 20%; /* Position à 80% de la hauteur */
+    transform: rotate(-15deg);
+}
+
+/* Scrolling text */
+.scrolling-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20rem;
+    text-transform: uppercase;
+    white-space: nowrap; /* S'assure que le texte reste sur une seule ligne */
+    color: rgba(0, 0, 100, 0.1); /* Couleur claire pour le texte */
+    display: inline-block;
+    margin-right: 50px; /* Ajoute de l'espace entre les textes */
+    animation: scroll-text 30s linear infinite; /* Animation continue et lente */
+}
+
+/* Animation */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0); /* Position initiale */
+    }
+    100% {
+        transform: translateX(-50%); /* Défilement de moitié (200% -> 100%) */
+    }
+}
+
+
+
+
+
+
+
+.testimonial-slider {
+    display: flex;
+    width: 100%;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1); /* Transition fluide */
+}
+
+.testimonial-slide {
+    flex: 0 0 100%; /* Chaque slide occupe 100% de la largeur du conteneur */
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px; /* Ajoute un peu d'espace autour */
 }
 
 .testimonial-card {
     background-color: #1A4540;
     color: white;
-    padding: 6.5em;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-   
+    padding: 50px; /* Augmente l'espace interne */
+    max-width: 900px; /* Largeur maximale augmentée */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Augmente l'ombre */
+    border-radius: 12px; /* Courbes plus visibles */
+    text-align: center;
+    width: 90%; /* Adapte la largeur au conteneur */
 }
 
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Plus d'espace entre le header et le texte */
+}
+
+.profile img {
+    width: 70px; /* Image plus grande */
+    height: 70px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 20px; /* Texte du nom plus grand */
+    font-weight: bold;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 18px; /* Étoiles légèrement plus grandes */
+}
 
 .testimonial-text {
-    margin: 75px 0;
-    font-size: 36px;
-    font-style: normal;
-font-weight: 400;
+    font-size: 20px; /* Texte plus lisible */
+    line-height: 1.8; /* Espacement plus agréable */
+    margin-top: 20px;
 }
 
 
+/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
@@ -533,14 +670,18 @@ font-weight: 400;
     width: 10px;
     height: 10px;
     margin: 0 5px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     cursor: pointer;
 }
 
 .dot.active {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #14B89C;
 }
+
+
+
+
 
 .cta-bottom{
     margin: 120px 112px;
@@ -561,7 +702,7 @@ font-weight: 400;
 .cta-bottom button{
 
     border-radius: 8px;
-    background: #F0657C;
+    background: #14B89C;
     padding: 20px 23px 19px 23px;
 }
 
@@ -646,7 +787,7 @@ font-weight: 400;
 
 /* Newsletter Section */
 .newsletter {
-    background-color: #fff;
+    background-color: #E3EFEF;
     border-radius: 16px;
     border: #F0657C;
     padding: 62px;
@@ -672,7 +813,7 @@ font-weight: 400;
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: #F0657C;
+    background-color: #2ECFB4;
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -839,7 +980,7 @@ button:active {
     position: fixed;
     bottom: 20px; 
     right: 20px; 
-    background-color: #F0657C; 
+    background-color: #2ECFB4; 
     color: white; 
     padding: 10px 20px; 
     font-size: 16px; 
@@ -859,3 +1000,201 @@ body {
 
 
 
+/* Position fixe pour le composant */
+.floating-card {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    background: #000000; /* Couleur de fond */
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .card-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Style de l'image de profil */
+  .profile-picture {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 3px solid #fff; /* Bordure blanche autour de l'image */
+  }
+  
+  /* Contenu textuel */
+  .text-content h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  
+  .text-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdbdda;
+  }
+  
+  /* Bouton CTA (Call To Action) */
+  .cta-button {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 10px 20px;
+    background: #4BCFB9; /* Couleur du bouton */
+    color: #1c1a44;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #d6c3ff; /* Couleur au survol */
+  }
+  
+  .arrow {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+
+  
+  @media (max-width: 768px) {
+    .floating-card {
+      bottom: 10px;
+      left: 10px;
+      padding: 8px 15px;
+    }
+  
+    .profile-picture {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .text-content h4 {
+      font-size: 14px;
+    }
+  
+    .text-content p {
+      font-size: 12px;
+    }
+  
+    .cta-button {
+      font-size: 12px;
+      padding: 8px 15px;
+    }
+  }
+
+  .floating-card {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+  @media (max-width: 768px) {
+
+    .body{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .navigation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+       padding: 0;
+        margin-top: 80px;
+        gap: 15px;
+    }
+
+    .header-left h2,
+.header-left h1,
+.header-left h3 {
+    text-align: center;
+    margin:0;
+}
+
+.header-left h1 {
+    font-size: 78px;
+}
+
+.header-left h1 span{
+    color: #4BCFB9;
+}
+
+.header-left h2 {
+    font-size: 21px;
+}
+
+.header-left h3 {
+    font-size: 24px;
+}
+
+.header-left-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+   margin: 0;
+   padding: 0;
+}
+
+.button-header-1,
+.button-header-2 {
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+    .header-right{
+        display: none;
+    }
+
+
+
+    .navigation-select{
+        display: none;
+    }
+
+    .barometre{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+        ;
+    }
+
+    .footer{
+        display: none;
+    }
+  
+  }

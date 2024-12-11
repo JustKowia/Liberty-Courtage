@@ -102,9 +102,9 @@ const images = {
     "Défiscalisation": "img/En-tête (58) 1.png",
 };
 
-document.querySelectorAll('.toggle-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const listItem = button.closest('.list-item');
+document.querySelectorAll('.list-item').forEach(listItem => {
+    listItem.addEventListener('click', () => {
+        const button = listItem.querySelector('.toggle-button');
         const h2 = listItem.querySelector('h2');
         const serviceImage = document.getElementById('service-image');
         const listItems = Array.from(document.querySelectorAll('.list-item'));
@@ -114,17 +114,18 @@ document.querySelectorAll('.toggle-button').forEach(button => {
         document.querySelectorAll('.list-item.expanded').forEach(item => {
             if (item !== listItem) {
                 item.classList.remove('expanded');
-                item.querySelector('.toggle-button').textContent = '+';
+                const itemButton = item.querySelector('.toggle-button');
+                if (itemButton) itemButton.textContent = '+';
             }
         });
 
         // Toggle the current section
         if (listItem.classList.contains('expanded')) {
             listItem.classList.remove('expanded');
-            button.textContent = '+';
+            if (button) button.textContent = '+';
         } else {
             listItem.classList.add('expanded');
-            button.textContent = '-';
+            if (button) button.textContent = '-';
 
             // Change the image based on the clicked section
             const newImage = images[h2.textContent.trim()];
@@ -138,3 +139,65 @@ document.querySelectorAll('.toggle-button').forEach(button => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector('.testimonial-slider');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentIndex = 0;
+
+    // Fonction pour afficher une slide donnée
+    function showSlide(index) {
+        // Correction de l'index si dépassement
+        if (index >= slides.length) {
+            index = 0;
+        } else if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        // Déplace le slider
+        slider.style.transform = `translateX(-${index * 100}%)`;
+
+        // Met à jour les points de pagination
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+
+        currentIndex = index;
+    }
+
+    // Fonction pour passer à la slide suivante
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // Fonction pour configurer le clic sur les points de pagination
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+
+    // Défilement automatique
+    setInterval(nextSlide, 7000);
+
+    // Initialisation
+    showSlide(0);
+});
+
+function goToContact() {
+    // Redirige vers la page de contact
+    window.location.href = "contact.html";
+
+
+}
+
+function goToHome() {
+    window.location.href = "index.html";
+}
+
+document.querySelector('.hamburger-menu').addEventListener('click', function () {
+    document.querySelector('.navigation').classList.toggle('active');
+  });
+  

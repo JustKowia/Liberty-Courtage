@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,27 @@
 </head>
 <body>
     <div id="scroll-progress">0%</div>
+    <div class="floating-card">
+        <div class="card-content">
+          <img src="profile.jpg" alt="Profile Picture" class="profile-picture" />
+          <div class="text-content">
+            <h4>Mickael Urbanski</h4>
+            <p>CEO Liberty Courtage</p>
+          </div>
+          <a href="#contact" class="cta-button" onclick="goToContact()" >
+            Book a call <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
     <div class="navigation">
-        <img src="img/logo.png" alt="img">
+        <img onclick="goToHome()" src="img/logo.png" alt="img">
         <div class="navigation-select">
-            <p>A propos</p>
+            <p onclick="goToHome()" >A propos</p>
             <p>Blog</p>
             <p>Nos services</p>
-            <button>Contactez-nous</button>
+            <button onclick="goToContact()">Contactez-nous</button>
+    
+              
         </div>
     </div>
 <div class="container">
@@ -28,8 +43,8 @@
                 projets <span>immobiliers!</span></h1>
             <h3>On simplifie, vous profitez ! </h3>
             <div class="header-left-button">
-                <button class="button-header-1">Contactez-nous</button>
-                <button class="button-header-2"></buttonclass>Prendre RDV</button>
+                <button  onclick="goToContact()"class="button-header-1">Contactez-nous</button>
+                <button onclick="goToContact()" class="button-header-2"></buttonclass>Prendre RDV</button>
             </div>
          </div>
          <div class="header-right">
@@ -212,31 +227,81 @@
         </div>
         </div>
     </div>
-    <div class="testimonial-card fade-in">
-        <div class="testimonial-header">
-            <div class="profile">
-                <img src="img/avatar.png" alt="Avatar">
-                <div>
-                    <span class="profile-name">Aurélie S.</span>
-                    <span class="stars">★★★★★</span>
+   
+    <div class="testimonial-section">
+        <div class="scrolling-background">
+            <div class="scrolling-text-container">
+                <div class="scrolling-text top-text"> COURTAGE  COURTAGE  COURTAGE</div>
+            </div>
+            <div class="scrolling-text-container">
+                <div class="scrolling-text bottom-text">LIBERTY  LIBERTY  LIBERTY</div>
+            </div>
+        </div>
+    
+        <div class="testimonial-slider">
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="profile">
+                            <img src="img/avatar.png" alt="Avatar">
+                            <div>
+                                <span class="profile-name">Aurélie S.</span>
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <span class="date">24/11/2024</span>
+                    </div>
+                    <p class="testimonial-text">
+                        Un service impeccable et rapide. Grâce à votre accompagnement, j’ai obtenu mon prêt à un taux exceptionnel. Merci pour votre professionnalisme !
+                    </p>
                 </div>
             </div>
-            <span class="date">24/11/2024</span>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="profile">
+                            <img src="img/avatar.png" alt="Avatar">
+                            <div>
+                                <span class="profile-name">Marc L.</span>
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <span class="date">12/10/2024</span>
+                    </div>
+                    <p class="testimonial-text">
+                        Très bon suivi, équipe professionnelle et réactive. J'ai apprécié leur attention aux détails.
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="profile">
+                            <img src="img/avatar.png" alt="Avatar">
+                            <div>
+                                <span class="profile-name">Jeanne D.</span>
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <span class="date">10/10/2024</span>
+                    </div>
+                    <p class="testimonial-text">
+                        Une expérience très satisfaisante. Le processus était simple, clair et efficace. Merci beaucoup !
+                    </p>
+                </div>
+            </div>
         </div>
-        <p class="testimonial-text">
-            Un service impeccable et rapide. Grâce à votre accompagnement, j’ai obtenu mon prêt à un taux exceptionnel. Merci pour... professionnalisme !
-        </p>
         <div class="pagination">
             <div class="dot active"></div>
             <div class="dot"></div>
             <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
         </div>
     </div>
+    
+    
     <div class="cta-bottom fade-in">
         <h1>Prêt pour concrétiser vos projets ?</h1>
-        <button>Prenez rendez-vous !</button>
+        <button onclick="goToContact()">Prenez rendez-vous !</button>
     </div>
     <div class="blog fade-in">
         <h1>Blog</h1>
@@ -309,7 +374,7 @@
             <div class="footer-left">
             <!-- Logo and Social Media -->
             <div class="footer-logo">
-                <img src="img/logo-bottom.png" alt="Liberty Courtage Logo">
+                <img onclick="goToHome()" src="img/logo-bottom.png" alt="Liberty Courtage Logo">
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-linkedin">in</i></a>
                     <a href="#"><i class="fab fa-facebook">f</i></a>
