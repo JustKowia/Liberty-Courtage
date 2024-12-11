@@ -201,3 +201,28 @@ document.querySelector('.hamburger-menu').addEventListener('click', function () 
     document.querySelector('.navigation').classList.toggle('active');
   });
   
+
+// Fonction pour afficher ou masquer le menu
+function toggleMenu() {
+    const menuOverlay = document.getElementById('menu-overlay');
+    menuOverlay.classList.toggle('active');
+}
+
+// Fonction pour fermer le menu si vous cliquez en dehors
+function closeMenu(event) {
+    const menuOverlay = document.getElementById('menu-overlay');
+    if (event.target === menuOverlay) {
+        menuOverlay.classList.remove('active');
+    }
+}
+
+// Fonction pour naviguer vers une section et fermer le menu
+function navigateToSection(event, sectionId) {
+    event.preventDefault(); // Empêcher le comportement par défaut du lien
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' }); // Défilement fluide
+        const menuOverlay = document.getElementById('menu-overlay');
+        menuOverlay.classList.remove('active'); // Fermer le menu après navigation
+    }
+}

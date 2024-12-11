@@ -10,6 +10,18 @@
     <title>Liberty Courtage</title>
 </head>
 <body>
+    <div class="floating-hamburger" onclick="toggleMenu()">
+        <span>☰</span>
+    </div>
+    <div class="menu-overlay" id="menu-overlay" onclick="closeMenu(event)">
+        <ul>
+            <li><a href="#home" onclick="navigateToSection(event, 'home')">Home</a></li>
+            <li><a href="#services" onclick="navigateToSection(event, 'services')">Services</a></li>
+            <li><a href="#calculator" onclick="navigateToSection(event, 'calculator')">Calculator</a></li>
+            <li><a href="#contact" onclick="goToContact()">Contact</a></li>
+        </ul>
+    </div>
+    
     <div id="scroll-progress">0%</div>
     <div class="floating-card">
         <div class="card-content">
@@ -36,7 +48,7 @@
     </div>
 <div class="container">
        
-        <div class="header">
+        <div class="header" id="home">
          <div class="header-left fade-in" >
             <h2>COURTIER IMMOBILIER</h2>
             <h1>Activez vos
@@ -113,7 +125,7 @@
         </div>
         <div class="barometre-right fade-in" >
             <div class="calculator-container">
-                <div class="calculator">
+                <div class="calculator" id="calculator">
                     <h1>Evaluez votre capacité d’emprunt</h1>
         
                     <div class="form">
@@ -138,7 +150,7 @@
     <div class="papillons fade-in">
         <img src="img/wing.png" alt="wing">
     </div>
-   <div class="service">
+   <div class="service" id="services">
         <div class="service-top">
         <h1>Un univers de solutions pour vos projets immobiliers </h1>
         <h3>SANS ENGAGEMENT</h3>
